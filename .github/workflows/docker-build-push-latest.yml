@@ -1,6 +1,7 @@
-name: manual-docker-build-push-latest
+name: docker-build-push-latest
 on:
   workflow_dispatch:
+  push:
         
 jobs:
   build:
