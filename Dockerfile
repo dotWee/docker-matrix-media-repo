@@ -3,7 +3,7 @@
 FROM golang:1.16-alpine AS builder
 
 # Install build dependencies
-RUN apk add --no-cache git musl-dev dos2unix build-base
+RUN apk add --no-cache git musl-dev dos2unix build-base binutils-gold
 
 WORKDIR /opt
 COPY . /opt
@@ -19,6 +19,7 @@ COPY --from=builder /opt/bin/plugin_antispam_ocr /plugins/
 COPY --from=builder /opt/bin/media_repo /opt/bin/import_synapse /opt/bin/gdpr_export /opt/bin/gdpr_import /usr/local/bin/
 
 RUN apk add --no-cache \
+        binutils-gold \
         su-exec \
         ca-certificates \
         dos2unix \
