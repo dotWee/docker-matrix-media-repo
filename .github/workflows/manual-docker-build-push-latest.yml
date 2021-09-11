@@ -31,9 +31,7 @@ jobs:
           build-args: version=latest
           context: .
           push: true
-          tags: |
-            dotwee/matrix-media-repo:latest
-            ghcr.io/dotwee/matrix-media-repo:latest
+          tags: dotwee/matrix-media-repo:latest
           labels: |
             maintainer = "Lukas Wolfsteiner <lukas@wolfsteiner.media>"
             org.opencontainers.image.source = "https://github.com/dotWee/docker-matrix-media-repo"
