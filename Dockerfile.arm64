@@ -7,8 +7,8 @@ RUN apk add --no-cache git musl-dev dos2unix build-base binutils-gold
 
 WORKDIR /opt
 COPY . /opt
-RUN dos2unix ./build-arm64.sh ./docker/run.sh
-RUN ./build-arm64.sh
+RUN dos2unix ./build.sh ./docker/run.sh
+RUN ./build.sh
 
 # ---- Stage 1 ----
 # Final runtime stage.
